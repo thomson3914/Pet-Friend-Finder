@@ -1,0 +1,28 @@
+{
+  "name": "friendfindersequelized",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0",
+    "path": "^0.12.7",
+    "sequelize": "^3.33.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomson3914/Pet-Friend-Finder"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomson3914/Pet-Friend-Finder"
+  },
+  "homepage": "https://github.com/thomson3914/Pet-Friend-Finder"
+}
