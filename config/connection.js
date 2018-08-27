@@ -11,13 +11,13 @@ var source = {
         database: "friendfinder"
     },
 
-    // jawsDB: {
-    //     port: 3306,
-    //     host: 'l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    //     user: 'cm0zdmk2ez4igof5',
-    //     password: "yuhl98jsef0k7ul4",
-    //     database: "lghowl35ljxl5vao" 
-    // }
+    jawsDB: {
+        port: 3306,
+        host: 'i5x1cqhq5xbqtv00.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        user: 'lgjw8icdqhfpxwh4',
+        password: "g2eo8ok20dxqgupi",
+        database: "av4qixl14ognna1e" 
+    }
 }
 
 var selectedSource = source.jawsDB;
