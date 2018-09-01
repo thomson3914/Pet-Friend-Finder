@@ -1,36 +1,250 @@
+<body class="survey">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-1"></div>
+
+            <div class="col-md-10">
+
+                <div class="panel panel-default" id="survey">
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <form id="surveyQuestions">
+
+                                <h2><strong>Survey Questions</strong></h2>
+                                {{!-- <h4>1 = Strongly Disagree, 5 = Strongly Agree</h4>
+                                <h5>*All fields required</h5>
+                                <br><br>
+
+                                <label>Name</label><br>
+                                <input type="text" class="form-control" id="name" aria-describedby="basic-addon1">
+                                <br>
+
+                                <label>Link to Photo Image</label><br>
+                                <input type="text" class="form-control" id="image" aria-describedby="basic-addon1">
+                                <br> --}}
+
+
+                                <label>How much shedding would you tolerate?</label><br>
+                                <select class="form-control" id="Q0">
+                                <option value="" disabled selected>Choose your options></option>
+                                <option value="1">1. Heavy</option>
+                                <option value="2">2. Moderate</option>
+                                <option value="3">3. Light</option>
+                                <option value="4">4. None</option>
+                                {{!-- <option value="5">5</option> --}}
+                            </select>
+                                <br><br>
+
+                                {{!-- <label>Have you owned a dog before?</label><br>
+                                <select class="form-control" id="Q1">
+                                <option value="1">Yes</option>
+                                <option value="2">No</option>                                
+                            </select>
+                                <br><br> --}}
+
+                                <label>How big or small will your new dog be?</label><br>
+                                <select class="form-control" id="Q1">
+                                <option value="" disabled selected>Choose your options></option>                                
+                                <option value="1">1. Under 10lbs</option>
+                                <option value="2">2. From 10 to 20lbs</option>
+                                <option value="3">3. From 20 to 40lbs</option>
+                                <option value="4">4. From 40 to 80lbs</option>
+                                <option value="5">5. From 80 to 120lbs</option>
+                            </select>
+                                <br><br>
+
+
+                                {{!-- <label>How much will your dog be able to play with you?</label><br>
+                                <select class="form-control" id="Q3">
+                                <option value="1">Only indoor playtime.</option>
+                                <option value="2">A short walk or backyard play.</option>
+                                <option value="3">Occasional long walks.</option>
+                                <option value="4">Daily walks and Jogs.</option>
+
+                            </select>
+                                <br><br> --}}
+
+                                <label>How would you describe your home?</label><br>
+                                <select class="form-control" id="Q2">
+                                <option value="" disabled selected>Choose your options></option>
+                                <option value="1">1. A Home With No Outdoor Space</option>
+                                <option value="2">2. A Home With a Small Yard or Nearby Park</option>
+                                <option value="3">3. A Home With A Fenced-In Yard</option>
+                                <option value="4">4. A Home With Abundant Outdoor Space</option>
+                            
+                            </select>
+                                <br><br>
+
+                                {{!-- <label> Will he have any kids to snuggle with?</label><br>
+                                <select class="form-control" id="Q5">
+                                <option value="1">1 No Kids and none planned</option>
+                                <option value="2">2 None... Yet.</option>
+                                <option value="3">3 Yes, i have kids under 12</option>
+                                <option value="4">4 yes, i have kids over 12</option>
+                                
+                            </select>
+                                <br><br>                        --}}
+
+
+                                <label> Will there be other pets in the home?.</label><br>
+                                <select class="form-control" id="Q3">
+                                <option value="" disabled selected>Choose your options></option>
+                                <option value="1">1. No other pets.</option>
+                                <option value="2">2. Other dogs.</option>
+                                <option value="3">3. Cats.</option>
+                                <option value="4">4. Other small animals.</option>
+                                {{!-- <option value="5">5</option> --}}
+                            </select>
+                                <br><br>
+
+                                {{!-- <label>How many hours a day will your dog be alone?</label><br>
+                                <select class="form-control" id="Q7">
+                                <option value="1">1 Alone Between 4-6 Hours</option>
+                                <option value="2">2 Alone Between 6-8 Hours</option>
+                                <option value="3">3 Alone Up To 4 Hours</option>
+                                <option value="4">4 Never alone</option>
+                                <option value="5">5</option>
+                            </select>
+                                <br><br> --}}
+
+                                <label>When it comes to training your dog, what do you prefer?</label><br>
+                                <select class="form-control" id="Q4">
+                                <option value="" disabled selected>Choose your options></option>
+                                <option value="1">1. Needs Little Training and Learns Easily</option>
+                                <option value="2">2. Requires Some Training</option>
+                                <option value="3">3. Will Thrive With Substantial Training</option>
+                                <option value="4">4. No training needed</option>
+                                {{!-- <option value="5">5</option> --}}
+                            </select>
+                                <br><br>
+
+                                <label>How vocal would your ideal dog be?</label><br>
+                                <select class="form-control" id="Q5">
+                                <option value="" disabled selected>Choose your options></option>
+                                <option value="1">1. Barks On Occassion</option>
+                                <option value="2">2. Has a Powerful Bark</option>
+                                <option value="3">3. Will Alert me of Unwanted Strangers</option>
+                                <option value="4">4. Relatively Quiet</option>
+                                {{!-- <option value="5">5</option> --}}
+                            </select>
+
+                                <br><br>
+                                <button type="button" class="btn btn-default" id="searchButton" data-toggle="modal" data-target="#myModal">Search</button>
+
+                            </form>
+
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Best Match Compatibility</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="bestMatchName"></div>
+                                            <img id="bestMatchImage" src="" width="250px" height="250px">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-1"></div>
+
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $("#searchButton").on("click", function() {
+
+        var newFriend = {
+            name: $("#name").val().trim(),
+            image: $("#image").val().trim(),
+            q0: $("#Q0").val(),
+            q1: $("#Q1").val(),
+            q2: $("#Q2").val(),
+            q3: $("#Q3").val(),
+            q4: $("#Q4").val(),
+            q5: $("#Q5").val(),
+            q6: $("#Q6").val(),
+            q7: $("#Q7").val(),
+            q8: $("#Q8").val(),
+            q9: $("#Q9").val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/api/friends",
+            data: newFriend
+        }).done(function(data) {
+            console.log(data);
+            $("#bestMatchName").text(data.name);
+            $("#bestMatchImage").attr("src", data.image);
+        });
+    });
+</script>
+
+</body>
+
+
+
+
+
+
+
+
+
 {{!-- <body>
     <div class="card text-dark">
-        <img class="card-img" src="image1.png" alt="Card image">
+        <img class="card-img" src="./image1.jpg" alt="Card image">
         <div class="card-img-overlay">
             <div class="jumbotron jumbotron-fluid bg-light shadow p-3 mb-5 bg-white rounded" style="margin-top: 40%;">
                 <div class="container">
                     <h1 class="display-3 padding-bottom-3 text-info mt-3" style="margin-bottom: 20px">Furry Friend Finder</h1>
                     <h3>Survey Questions</h3>
 
-                    <form> --}}
-                        <!-- <div class="row">
+                    <form>
+                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="name">Name (Required)</label>
                                     <input type="text" class="form-control" id="name" placeholder="Enter name" required>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
 
-                        <!-- <div class="row">
+                        <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="photo">Photo (Required)</label>
-                                    <input type="text" class="form-control" id="photo" required>
+                                    <input type="text" class="form-control" id="image" required>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
 
-                        {{!-- <div class="row">
+                        <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q1">1. How vocal would your ideal dog be? </label>
-                                    <select class="form-control" id="q1">
+                                    <select class="form-control" id="Q0">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 Barks On Occassion</option>
                                         <option value="2">2 Has a Powerful Bark</option>
@@ -45,7 +259,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q2">2. How much shedding would you tolerate? </label>
-                                    <select class="form-control" id="q2">
+                                    <select class="form-control" id="Q1">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 Heavy</option>
                                         <option value="2">2 Minimal</option>
@@ -60,7 +274,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q3">3. How many hours a day will your dog be alone?</label>
-                                    <select class="form-control" id="q3">
+                                    <select class="form-control" id="Q2">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 Alone Between 4-6 Hours</option>
                                         <option value="2">2 Alone Between 6-8 Hours</option>
@@ -75,7 +289,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q4">4. How would you describe your home? </label>
-                                    <select class="form-control" id="q4">
+                                    <select class="form-control" id="Q3">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 A Home With A Fenced-In Yard</option>
                                         <option value="2">2 A Home With a Small Yard or Nearby Park</option>
@@ -91,7 +305,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q5">5. When it comes to training your dog, what do you prefer?</label>
-                                    <select class="form-control" id="q5">
+                                    <select class="form-control" id="Q4">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 Needs Little Training and Learns Easily</option>
                                         <option value="2">2 Requires Some Training</option>
@@ -106,7 +320,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q6">6. Will he have any kids to snuggle with?</label>
-                                    <select class="form-control" id="q6">
+                                    <select class="form-control" id="Q5">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 No Kids and none planned</option>
                                         <option value="2">2 None... Yet.</option>
@@ -121,7 +335,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q7">7. Have you owned a dog before?</label>
-                                    <select class="form-control" id="q7">
+                                    <select class="form-control" id="Q6">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 Yes, i'm an experienced dog owner</option>
                                         <option value="2">2 No, this will be my first dog</option>
@@ -136,7 +350,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q8">8. Will he have roommates? (Other pets)</label>
-                                    <select class="form-control" id="q8">
+                                    <select class="form-control" id="Q7">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 No other pets.</option>
                                         <option value="2">2 Other dogs.</option>
@@ -152,7 +366,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q9">9. How much will your dog be able to play with you?</label>
-                                    <select class="form-control" id="q9">
+                                    <select class="form-control" id="Q8">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 Only indoor playtime.</option>
                                         <option value="2">2 A short walk or backyard play.</option>
@@ -168,7 +382,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="q10">10. How big or small will your new dog be?</label>
-                                    <select class="form-control" id="q10">
+                                    <select class="form-control" id="Q9">
                                         <option value="" disabled selected>Choose your options></option>
                                         <option value="1">1 10 lbs and under</option>
                                         <option value="2">2 20 lbs and under</option>
@@ -180,7 +394,7 @@
                             </div>
                         </div>
                         <button id="submitButton" type="submit" name="action" class="btn btn-primary bg-info" data-toggle="modal">Send</button>
-                        <!-- data-target="#modal1" -->
+                        <data-target="#modal1">
                     </form>
                 </div>
             </div>
@@ -220,16 +434,16 @@
                     name: $("#name").val().trim(),
                     pic: $("#photo").val().trim(),
                     scores: [
-                        $("#q1").val().trim(),
-                        $("#q2").val().trim(),
-                        $("#q3").val().trim(),
-                        $("#q4").val().trim(),
-                        $("#q5").val().trim(),
-                        $("#q6").val().trim(),
-                        $("#q7").val().trim(),
-                        $("#q8").val().trim(),
-                        $("#q9").val().trim(),
-                        $("#q10").val().trim(),
+                        $("#Q0").val().trim(),
+                        $("#Q1").val().trim(),
+                        $("#Q2").val().trim(),
+                        $("#Q3").val().trim(),
+                        $("#Q4").val().trim(),
+                        $("#Q5").val().trim(),
+                        $("#Q6").val().trim(),
+                        $("#Q7").val().trim(),
+                        $("#Q8").val().trim(),
+                        $("#Q9").val().trim(),
                     ]
                 };
 
@@ -241,26 +455,24 @@
                 $(".modal").modal();
                 $("#name").val("");
                 $("#photo").val("");
-                $("#q1").val("");
-                $("#q2").val("");
-                $("#q3").val("");
-                $("#q4").val("");
-                $("#q5").val("");
-                $("#q6").val("");
-                $("#q7").val("");
-                $("#q8").val("");
-                $("#q9").val("");
-                $("#q10").val("");
+                $("#Q0").val("");
+                $("#Q1").val("");
+                $("#Q2").val("");
+                $("#Q3").val("");
+                $("#Q4").val("");
+                $("#Q5").val("");
+                $("#Q6").val("");
+                $("#Q7").val("");
+                $("#Q8").val("");
+                $("#Q9").val("");
 
             });
         });
-    </script> --}}
+    </script>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
@@ -269,208 +481,3 @@
 
 
 
-
-
-<body class="survey">
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-1"></div>
-
-            <div class="col-md-10">
-
-                <div class="panel panel-default" id="survey">
-                    <div class="panel-body">
-
-
-                        {{!-- <div id="link">
-                            <a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/thomson3914/Pet-Friend-Finder" target="_blank">GitHub Repo</a>
-                        </div> --}}
-
-
-                        <div class="row">
-                            <form id="surveyQuestions">
-
-                                <h2><strong>Survey Questions</strong></h2>
-                                {{!-- <h4>1 = Strongly Disagree, 5 = Strongly Agree</h4>
-                                <h5>*All fields required</h5> --}}
-                                <br><br>
-
-                                <label>Name</label><br>
-                                <input type="text" class="form-control" id="name" aria-describedby="basic-addon1">
-                                <br>
-
-                                <label>Link to Photo Image</label><br>
-                                <input type="text" class="form-control" id="image" aria-describedby="basic-addon1">
-                                <br>
-
-
-                                <label> I will do anything for a treat.</label><br>
-                                <select class="form-control" id="Q0">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                                <br><br>
-
-                                <label>I am not a dog.</label><br>
-                                <select class="form-control" id="Q1">
-                                <option value="1">jk im a dog</option>
-                                <option value="2">i'm a cat</option>
-                                <option value="3">i'm a turtle</option>
-                                <option value="4">i'm a fish</option>
-                                <option value="5">i'm a rodent</option>
-                            </select>
-                                <br><br>
-
-                                <label>I am obedient and play well with others.</label><br>
-                                <select class="form-control" id="Q2">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                                <br><br>
-
-
-                                <label>If I hear barking, I’ll want to bark too.</label><br>
-                                <select class="form-control" id="Q3">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                                <br><br>
-
-                                <label>I Live in a Large Home With Abundant Outdoor Space.</label><br>
-                                <select class="form-control" id="Q4">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                                <br><br>
-
-                                <label> I feel comfortable wearing costumes.</label><br>
-                                <select class="form-control" id="Q5">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                                <br><br>
-
-                                <label> I am a lap dog.</label><br>
-                                <select class="form-control" id="Q6">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                                <br><br>
-
-                                <label>I require grooming on a regular basis.</label><br>
-                                <select class="form-control" id="Q7">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                                <br><br>
-
-                                <label>I sniff butts, but only in public.</label><br>
-                                <select class="form-control" id="Q8">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                                <br><br>
-
-                                <label>You feel more energetic after spending time with a group of dogs at the park.</label><br>
-                                <select class="form-control" id="Q9">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-
-                                <br><br>
-                                <button type="button" class="btn btn-default" id="searchButton" data-toggle="modal" data-target="#myModal">Search</button>
-
-                            </form>
-
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Best Match Compatibility</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div id="bestMatchName"></div>
-                                            <img id="bestMatchImage" src="" width="250px" height="250px">
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="col-md-1"></div>
-
-            </div>
-        </div>
-    </div>
-</body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-        crossorigin="anonymous"></script>
-<script type="text/javascript">
-    $("#searchButton").on("click", function() {
-
-        var newFriend = {
-            name: $("#name").val().trim(),
-            image: $("#image").val().trim(),
-            q0: $("#Q0").val(),
-            q1: $("#Q1").val(),
-            q2: $("#Q2").val(),
-            q3: $("#Q3").val(),
-            q4: $("#Q4").val(),
-            q5: $("#Q5").val(),
-            q6: $("#Q6").val(),
-            q7: $("#Q7").val(),
-            q8: $("#Q8").val(),
-            q9: $("#Q9").val()
-        };
-
-        $.ajax({
-            type: "POST",
-            url: "/api/friends",
-            data: newFriend
-        }).done(function(data) {
-            console.log(data);
-            $("#bestMatchName").text(data.name);
-            $("#bestMatchImage").attr("src", data.image);
-        });
-    });
-</script>
