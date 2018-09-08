@@ -1,43 +1,57 @@
-// Dependencies
-// =============================================================
+require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
-// var methodOverride = require("method-override");
+var exphbs = require("express-handlebars");
+var cors = require('cors');
+
 var db = require("./models");
 
-
-// Sets up the Express App
-// =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// app.get('/', function(req, res) {
-//     res.redirect('/signin');
-// });
-
-
-// Sets up the Express app to handle data parsing
+// Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("public"));
+app.use(cors({
+  'allowedHeaders': ['sessionId', 'Content-Type'],
+  'exposedHeaders': ['sessionId'],
+  'origin': '*',
+  'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  'preflightContinue': false
+}));
 
-// // Sets up Express Engine Handlebars
-var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+// Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
 app.set("view engine", "handlebars");
 
 // Routes
-// =============================================================
-var routes = require("./controllers/friend_controller.js");
-app.use("/", routes);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
+var syncOptions = { force: false };
 
-// Starts the server to begin listening
-// =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-    app.listen(PORT, function() {
-        console.log("App listening on PORT " + PORT);
-    });
+// If running a test, set syncOptions.force to true
+// clearing the `testdb`
+if (process.env.NODE_ENV === "test") {
+  syncOptions.force = true;
+}
+
+// Starting the server, syncing our models ------------------------------------/
+db.sequelize.sync(syncOptions).then(function() {
+  app.listen(PORT, function() {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });
+
+module.exports = app;
